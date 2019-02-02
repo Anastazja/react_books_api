@@ -1,0 +1,280 @@
+@import "./_variables";
+@import "./_mixins";
+
+
+h1, h2, h3, h4, h5 {
+    color: $primary-text-color;
+    font-family: $primary-font;
+}
+a, button {
+    font-family: $primary-font;
+}
+
+img {
+    max-width: 100%;
+}
+#root {
+    min-height: 100%;
+    padding-bottom: 200px;
+    position: relative;
+    .header {
+        align-items: baseline;
+        display: flex;
+        justify-content: space-between;
+        @include mobile {
+            flex-direction: column;
+            ul {
+                li {
+                    display: block;
+                    padding: 20px 5px 0 !important
+                }
+            }
+        }
+        img {
+            display: inline-block;
+            max-height: 50px;
+        }
+        ul {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            li {
+                display: inline-block;
+                padding-left: 30px;
+                a {
+                    color: #a8a9ad;
+                    font-family: $secondary-font;
+                    font-size: 24px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .top-banner {
+        align-items: center;
+        display: flex;            
+        justify-content: space-between;
+        padding-top: 30px;
+        .search-bar-block {
+            form {
+                label {
+                    font-weight: normal;
+                    text-transform: none;
+                    color: $secondary-text-color;
+                }
+                input {
+                    width: auto;
+                }
+                .submit-button {
+                    border: 2px solid $secondary-color;
+                    background-color: transparent;
+                    color: $secondary-color;
+                    font-family: $primary-font;
+                    margin-left: 10px;              
+                    width: 100px;
+                    &:hover, &:focus, &:active {
+                        box-shadow: 0 16px 32px 0 rgba(60, 0, 120, 0.25); 
+                        background-color: $secondary-color !important;
+                        background-image: linear-gradient(45deg, $secondary-color 0%, #ca30a2 55%, $secondary-color 90%) !important;
+                        background-position: 100% 0 !important;
+                        background-size: 200% 200% !important;
+                        border-color: transparent;
+                        color: $white;
+                        transition: $transition-efect;
+                    }
+                    @include mobile {
+                        margin: 10px 0;
+                        display: block;
+                    }
+                }
+            }
+        }
+        img {
+            max-width: 400px;
+            width: 100%;
+        }
+    }
+
+    .pagination {
+        display: inline-flex;
+        list-style: none;
+        padding-left: 0;
+        li {
+            border-radius: $buttons-border-radius;
+            &.active {
+                background-color: $primary-color;
+                a {    
+                    color: $white;
+                }
+            }
+            &.disabled {
+                opacity: 0.3;
+                a {
+                    cursor: default;
+                }
+            }
+            a {
+                color: $secondary-color;
+                display: block;
+                padding: 10px 15px;
+                &:hover {
+                    background-color: $primary-color;
+                    color: $white;
+                    border-radius: $buttons-border-radius;
+                    transition: $transition-efect;
+                }
+            }
+        }
+    }
+    
+    .information {
+        color: $secondary-text-color;
+        font-size: $secondary-font-size;    
+        padding-left: 10px;
+    }
+    
+    .item.book-item {
+        padding: 10px;
+        margin: 10px 0;
+        &:nth-child(odd) {
+            .content {
+                background-color: #f8f8f8;
+            }
+        }
+        .image {
+            background-color: transparent;
+            border-radius: 20px;
+            position: absolute;
+            max-height: $product-img-height;
+            max-width: $product-img-width;
+            z-index: 1;
+            @include mobile {
+                margin: 0 auto;
+                position: relative;
+            }
+        }
+        .empty-img {
+            background-color: $empty-img-background;
+            border-radius: 20px;
+            display: table-cell;
+            height: $product-img-height;
+            position: absolute;
+            width: $product-img-width;
+            z-index: 1;
+            @include mobile {
+                position: relative;
+            }
+        }
+        .content {
+            border: 1px solid rgba( 34, 36, 38, 0.1);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            margin-top: 20px;
+            min-height: 206px;
+            padding: 10px 10px 10px 150px;
+            @include mobile {
+                padding: 10px;
+            }
+            .header {
+                color: $primary-text-color;
+                font-family: $primary-font;
+                font-size: 26px;
+                font-weight: 600;
+                line-height: 26px;
+                padding: 20px 0 10px;
+            }
+            .description {
+                color: $secondary-text-color;
+                font-size: $secondary-font-size;
+                span {
+                    display: block;
+                }
+            }
+            .button {
+                align-self: flex-end;
+                border-radius: $buttons-border-radius;
+                border: 2px solid $secondary-color;
+                background-color: transparent;
+                color: $secondary-color;
+                font-family: $primary-font;
+                margin-right: 30px;               
+                width: 150px;
+                &:hover, &:focus, &:active {
+                    box-shadow: 0 16px 32px 0 rgba(60, 0, 120, 0.25); 
+                    background-color: $secondary-color !important;
+                    background-image: linear-gradient(45deg, $secondary-color 0%, #ca30a2 55%, $secondary-color 90%) !important;
+                    background-position: 100% 0 !important;
+                    background-size: 200% 200% !important;
+                    border-color: transparent;
+                    color: $white;
+                    transition: $transition-efect;
+                }
+                @include mobile {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    
+    .loader-block {
+        background-color: rgba(0, 0, 0, 0.45) !important;
+        .loader{
+            display: flex !important;
+            justify-content: center;
+            width: auto;
+        }
+        span {
+            margin-top: 50px;
+        }
+    }
+
+    .about-us {
+        padding-top: 100px;
+        @include mobile {
+            padding-top: 30px;
+        }
+        p {
+            color: $secondary-text-color;
+            font-size: 14px;
+        }
+        a {
+            color: $primary-color;
+            font-size: $secondary-font-size;
+            font-weight: 600;
+            &:hover, &:focus, &:active {
+                color: $secondary-color;
+                transition: $transition-efect;
+            }
+        }
+    }
+
+    .bottom-background {
+        bottom: 0;
+        position: absolute;
+    }
+
+    .not-found {
+        padding-top: 100px;
+        img {
+            max-width: 100%;
+        }
+        .message {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h2 {
+                font-size: 80px;
+            }
+            h3 {
+                font-size: 40px;
+            }
+            p {
+                font-size: 30px;
+            }
+        }
+    }
+}

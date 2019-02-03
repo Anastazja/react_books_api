@@ -46,5 +46,10 @@ For code checking - [ESLint](https://www.npmjs.com/package/eslint).
 
 For style compiling - SCSS.
 
+[Hosting](https://flashy-base-9053.roast.io/)
+
+Due to cdn hosting restriction, not all works expected
+(ex:404 pages not working). So it's just a demo.
+
 
 Author: anastasiia.rzeszow@gmail.com
